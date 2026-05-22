@@ -250,7 +250,7 @@ const GlobeVisual: React.FC = () => {
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         style={{
           position: 'absolute', width: '600px', height: '600px',
-          backgroundImage: "url('/hero_globe_bg.png')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}hero_globe_bg.png')`,
           backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
           borderRadius: '50%', zIndex: 2,
           maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 48%, rgba(0,0,0,0) 78%)',
@@ -517,7 +517,7 @@ const Hero = () => {
         display: 'flex', alignItems: 'center',
         paddingTop: '120px', paddingBottom: '80px',
         overflow: 'hidden',
-        background: "url('/hero_cyber_env_bg.png') center center / cover no-repeat, linear-gradient(135deg, #F8FAFF 0%, #EEF2FF 100%)",
+        background: `url('${import.meta.env.BASE_URL}hero_cyber_env_bg.png') center center / cover no-repeat, linear-gradient(135deg, #F8FAFF 0%, #EEF2FF 100%)`,
       }}
     >
       {/* Full-section particle canvas */}

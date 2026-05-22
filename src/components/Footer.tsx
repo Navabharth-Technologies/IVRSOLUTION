@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div style={{ gridColumn: 'span 2' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>
-              <img src="/navabharath_logo.png" alt="Navabharath Technologies" style={{ height: '40px' }} />
+              <img src={`${import.meta.env.BASE_URL}navabharath_logo.png`} alt="Navabharath Technologies" style={{ height: '40px' }} />
               <div>
                 <div style={{ fontWeight: 900, fontSize: '1rem', color: '#FFFFFF', letterSpacing: '0.05em' }}>NAVABHARATH</div>
                 <div style={{ fontWeight: 500, fontSize: '0.7rem', color: '#E0F7FF', letterSpacing: '0.08em' }}>TECHNOLOGIES</div>

@@ -64,7 +64,7 @@ const Header = () => {
         {/* Logo */}
         <motion.a href="#home" whileHover={{ scale: 1.02 }}
           style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-          <img src="/navabharath_logo.png" alt="Logo"
+          <img src={`${import.meta.env.BASE_URL}navabharath_logo.png`} alt="Logo"
             style={{
               height: isScrolled ? '42px' : '52px',
               transition: 'all 0.3s',
