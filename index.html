@@ -3,11 +3,13 @@
   <head>
     <script>
       // Redirect to the compiled /docs/ folder if we are running in production on GitHub Pages
-      if (window.location.hostname.includes('github.io') && !window.location.pathname.includes('/docs')) {
+      if (window.location.hostname.includes('github.io')) {
         const docsPath = window.location.pathname.endsWith('/') 
           ? window.location.pathname + 'docs/' 
           : window.location.pathname + '/docs/';
         window.location.replace(docsPath);
+      } else {
+        window.location.replace('/dev.html');
       }
     </script>
     <meta charset="UTF-8" />
@@ -17,7 +19,5 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="src/main.tsx"></script>
   </body>
 </html>
-

@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  HeartPulse, Landmark, GraduationCap, ShoppingBag,
+  Landmark, GraduationCap, ShoppingBag,
   Wifi, Headphones, Truck, Hotel,
 } from 'lucide-react';
 
 /* ─── Industry Data ──────────────────────────────────────────────── */
 const industries = [
-  {
-    name: 'Healthcare',
-    icon: HeartPulse,
-    desc: 'HIPAA-compliant IVR flows, appointment automation, and 24/7 patient call routing.',
-    tag: 'Patient-First',
-    color: '#6C4CF1',
-    colorRgb: '108,76,241',
-    gradient: 'linear-gradient(135deg, #6C4CF1 0%, #B48CFF 100%)',
-    stat: '60% fewer missed calls',
-  },
   {
     name: 'Banking & Finance',
     icon: Landmark,
