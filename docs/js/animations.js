@@ -52,9 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
           p.x += p.vx;
           p.y += p.vy;
           
-          // Bounce
-          if (p.x < 0 || p.x > bgCanvas.width) p.vx *= -1;
-          if (p.y < 0 || p.y > bgCanvas.height) p.vy *= -1;
+          // Responsive bounce boundaries logic
+          if (p.x < 0) {
+            p.x = 0;
+            p.vx = Math.abs(p.vx);
+          } else if (p.x > bgCanvas.width) {
+            p.x = bgCanvas.width;
+            p.vx = -Math.abs(p.vx);
+          }
+          if (p.y < 0) {
+            p.y = 0;
+            p.vy = Math.abs(p.vy);
+          } else if (p.y > bgCanvas.height) {
+            p.y = bgCanvas.height;
+            p.vy = -Math.abs(p.vy);
+          }
         });
         
         animId = requestAnimationFrame(tick);
@@ -106,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ═══════════════════════════════════════════════════════════
-     3. HERO INTERACTIVE MOUSE-FOLLOW GLOW (SPRING HOOK REPLACEMENT)
+     3. HERO INTERACTIVE MOUSE/TOUCH-FOLLOW GLOW (SPRING HOOK REPLACEMENT)
      ═══════════════════════════════════════════════════════════ */
   const hero = document.getElementById('home');
   const mouseGlow = document.querySelector('.hero-mouse-glow');
@@ -117,11 +129,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentX = 50;
     let currentY = 50;
 
-    hero.addEventListener('mousemove', (e) => {
+    const updateGlowTarget = (clientX, clientY) => {
       const rect = hero.getBoundingClientRect();
-      targetX = ((e.clientX - rect.left) / rect.width) * 100;
-      targetY = ((e.clientY - rect.top) / rect.height) * 100;
+      targetX = ((clientX - rect.left) / rect.width) * 100;
+      targetY = ((clientY - rect.top) / rect.height) * 100;
+    };
+
+    hero.addEventListener('mousemove', (e) => {
+      updateGlowTarget(e.clientX, e.clientY);
     });
+
+    hero.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        updateGlowTarget(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
 
     const interpolateGlow = () => {
       // Damping coefficient maps to React springs
@@ -138,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ═══════════════════════════════════════════════════════════
-     4. PILLAR CARD LOCAL MOUSE-TRACKING LIGHTS
+     4. PILLAR CARD LOCAL MOUSE/TOUCH-TRACKING LIGHTS
      ═══════════════════════════════════════════════════════════ */
   const pillarCards = document.querySelectorAll('.pillar-card');
   pillarCards.forEach((card) => {
@@ -149,18 +171,67 @@ document.addEventListener('DOMContentLoaded', () => {
       // Read accent color from style
       const accentColor = tracker.getAttribute('data-accent-color') || '#6C4CF1';
       
-      tracker.addEventListener('mousemove', (e) => {
+      const updateCardGlow = (clientX, clientY) => {
         const rect = tracker.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        
+        const x = ((clientX - rect.left) / rect.width) * 100;
+        const y = ((clientY - rect.top) / rect.height) * 100;
         glow.style.background = `radial-gradient(circle 80px at ${x}% ${y}%, ${accentColor}18 0%, transparent 70%)`;
+      };
+
+      tracker.addEventListener('mousemove', (e) => {
+        updateCardGlow(e.clientX, e.clientY);
       });
+
+      tracker.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length > 0) {
+          updateCardGlow(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
       
       tracker.addEventListener('mouseleave', () => {
         glow.style.background = 'none';
       });
+
+      tracker.addEventListener('touchend', () => {
+        glow.style.background = 'none';
+      });
     }
   });
+
+  /* ═══════════════════════════════════════════════════════════
+     5. SCROLL-REVEAL OBSERVATIONAL ANIMATIONS (INTERSECTION OBSERVER)
+     ═══════════════════════════════════════════════════════════ */
+  // Dynamically assign reveal class to cards and layout groups for motion reveal
+  const animTargets = [
+    '.pillar-card',
+    '.industry-card',
+    '.faq-item',
+    '.contact-info-single-card'
+  ];
+  animTargets.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      el.classList.add('reveal-fade-up');
+    });
+  });
+
+  const revealElements = document.querySelectorAll('.reveal-fade-up');
+  if (revealElements.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    revealElements.forEach(el => observer.observe(el));
+  }
 
 });
