@@ -1,0 +1,227 @@
+/* ═══════════════════════════════════════════════════════════
+   GPU-ACCELERATED KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Core Floating Elements */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Background blob drift and pulsations */
+@keyframes blobDrift {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50%      { transform: translate(-48%, -52%) scale(1.08); }
+}
+
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50%      { transform: translate(-53%, -47%) scale(1.06); }
+}
+
+@keyframes blobPulse1 {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.7; }
+  50%       { transform: translate(-48%,-52%) scale(1.1); opacity: 1; }
+}
+
+@keyframes blobPulse2 {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
+  50%       { transform: translate(-52%,-48%) scale(1.08); opacity: 0.9; }
+}
+
+/* Card hover animation effects */
+@keyframes borderSweep {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes shimmerBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Ripple ring and pulse dots */
+@keyframes ripple-effect {
+  0% { transform: scale(0); opacity: 0.45; }
+  100% { transform: scale(7); opacity: 0; }
+}
+
+@keyframes clickPulse {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes pulseDotAnimation {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%      { transform: scale(1.8); opacity: 0; }
+}
+
+.pulse-dot-ring-active {
+  animation: pulseDotAnimation 2s ease-in-out infinite;
+}
+
+/* Orbit Rotations */
+@keyframes rotate-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-counter-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO FLOATING CARDS DEFINITIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Card 0: AI Call Routing */
+.float-card-0 {
+  animation: floatCard0-y 4.2s ease-in-out infinite 0.125s,
+             floatCard0-x 5.88s ease-in-out infinite 0.1s;
+}
+@keyframes floatCard0-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes floatCard0-x {
+  0%, 100% { margin-left: 0px; }
+  25% { margin-left: 3px; }
+  75% { margin-left: -3px; }
+}
+
+/* Card 1: Smart Analytics */
+.float-card-1 {
+  animation: floatCard1-y 4.8s ease-in-out infinite 0.375s,
+             floatCard1-x 6.72s ease-in-out infinite 0.3s;
+}
+@keyframes floatCard1-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes floatCard1-x {
+  0%, 100% { margin-left: 0px; }
+  25% { margin-left: -3px; }
+  75% { margin-left: 3px; }
+}
+
+/* Card 2: Multi-Level IVR */
+.float-card-2 {
+  animation: floatCard2-y 5.4s ease-in-out infinite 0.625s,
+             floatCard2-x 7.56s ease-in-out infinite 0.5s;
+}
+@keyframes floatCard2-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-11px); }
+}
+@keyframes floatCard2-x {
+  0%, 100% { margin-left: 0px; }
+  25% { margin-left: 3px; }
+  75% { margin-left: -3px; }
+}
+
+/* Card 3: 24/7 IVR Automation */
+.float-card-3 {
+  animation: floatCard3-y 6.0s ease-in-out infinite 0.875s,
+             floatCard3-x 8.4s ease-in-out infinite 0.7s;
+}
+@keyframes floatCard3-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-13px); }
+}
+@keyframes floatCard3-x {
+  0%, 100% { margin-left: 0px; }
+  25% { margin-left: -3px; }
+  75% { margin-left: 3px; }
+}
+
+/* Card 4: Cloud Telephony */
+.float-card-4 {
+  animation: floatCard4-y 6.6s ease-in-out infinite 1.125s,
+             floatCard4-x 9.24s ease-in-out infinite 0.9s;
+}
+@keyframes floatCard4-y {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes floatCard4-x {
+  0%, 100% { margin-left: 0px; }
+  25% { margin-left: 3px; }
+  75% { margin-left: -3px; }
+}
+
+/* Floating Icons */
+.float-icon-0 { animation: floatIcon0 5.5s ease-in-out infinite; }
+@keyframes floatIcon0 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+.float-icon-1 { animation: floatIcon1 6.5s ease-in-out infinite 0.4s; }
+@keyframes floatIcon1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-5deg); }
+}
+
+.float-icon-2 { animation: floatIcon2 7.5s ease-in-out infinite 0.8s; }
+@keyframes floatIcon2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+.float-icon-3 { animation: floatIcon3 8.5s ease-in-out infinite 1.2s; }
+@keyframes floatIcon3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-5deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NETWORKING LINES SVG ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+.dash-path {
+  stroke-dasharray: 18 120;
+  stroke-dashoffset: 0;
+}
+
+/* Define CSS keyframes for 8 network line tracks */
+@keyframes dash0 { to { stroke-dashoffset: -138px; } }
+@keyframes dot0  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash1 { to { stroke-dashoffset: -138px; } }
+@keyframes dot1  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash2 { to { stroke-dashoffset: -138px; } }
+@keyframes dot2  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash3 { to { stroke-dashoffset: -138px; } }
+@keyframes dot3  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash4 { to { stroke-dashoffset: -138px; } }
+@keyframes dot4  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash5 { to { stroke-dashoffset: -138px; } }
+@keyframes dot5  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash6 { to { stroke-dashoffset: -138px; } }
+@keyframes dot6  { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+@keyframes dash7 { to { stroke-dashoffset: -138px; } }
+@keyframes dot7  { from { offset-distance: 0%; } to { offset-distance: 100%; } }

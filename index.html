@@ -1,23 +1,1022 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script>
-      // Redirect to the compiled /docs/ folder if we are running in production on GitHub Pages
-      if (window.location.hostname.includes('github.io')) {
-        const docsPath = window.location.pathname.endsWith('/') 
-          ? window.location.pathname + 'docs/' 
-          : window.location.pathname + '/docs/';
-        window.location.replace(docsPath);
-      } else {
-        window.location.replace('/dev.html');
-      }
-    </script>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="navabharath_logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navabharath Technologies | Advanced IVR Systems</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/navabharath_logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navabharath Technologies | Advanced IVR Systems</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- ═══════════════════════════════════════════════════════════
+       HEADER COMPONENT
+       ═══════════════════════════════════════════════════════════ -->
+    <header class="nbt-header">
+      <div class="nbt-header-inner">
+        <!-- Logo -->
+        <a href="#home" class="nbt-logo">
+          <img src="images/navabharath_logo.png" alt="Logo" class="nbt-logo-img" />
+          <div class="nbt-logo-text">
+            <div class="nbt-logo-title">NAVABHARATH</div>
+            <div class="nbt-logo-subtitle">TECHNOLOGIES</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nbt-desktop-nav">
+          <a href="#home" class="nbt-nav-pill active">Home</a>
+          <a href="#about" class="nbt-nav-pill">About Us</a>
+          <a href="#features" class="nbt-nav-pill">Features</a>
+          <a href="#industries" class="nbt-nav-pill">Industries</a>
+          <a href="#faq" class="nbt-nav-pill">FAQ's</a>
+          <a href="#contact" class="nbt-nav-pill">Contact</a>
+          <div class="nav-indicator-bar"></div>
+        </nav>
+
+        <!-- Right Side Button Controls -->
+        <div class="nbt-header-right">
+          <a href="#contact" class="nbt-desktop-cta">
+            Request Demo
+            <i data-lucide="arrow-up-right" style="width: 15px; height: 15px;"></i>
+          </a>
+          <button class="nbt-mobile-toggle">
+            <i data-lucide="menu" style="width: 28px; height: 28px;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Panel -->
+      <div class="nbt-mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#features">Features</a>
+        <a href="#industries">Industries</a>
+        <a href="#faq">FAQ's</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nbt-mobile-cta">Request Demo</a>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════
+       MAIN WRAPPER
+       ═══════════════════════════════════════════════════════════ -->
+    <main>
+
+      <!-- ═══════════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════════ -->
+      <section id="home" class="hero-section">
+        <!-- Interactive Background Particles -->
+        <canvas id="hero-particles-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.55;"></canvas>
+
+        <!-- Spring Mouse-follow ambient glow -->
+        <div class="hero-mouse-glow"></div>
+
+        <!-- Static deep glow top-right -->
+        <div class="hero-static-glow" style="animation: floating 5.5s ease-in-out infinite;"></div>
+
+        <!-- Split Layout Container -->
+        <div class="hero-layout">
+
+          <!-- Left Column Content -->
+          <div class="hero-content">
+            <!-- Badge -->
+            <div class="hero-badge">
+              <i data-lucide="volume-2" style="width: 15px; height: 15px; color: #6C4CF1;"></i>
+              <span class="hero-badge-text">Next-Generation AI IVR Platform</span>
+              <span class="hero-badge-dot" style="animation: clickPulse 1.5s ease-out infinite;"></span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="hero-headline">
+              <span class="text-gradient">Smart IVR</span><br />
+              <span class="text-gradient">Solutions</span> 
+              <span style="color: #1E1E2F;">for</span><br />
+              <span style="color: #1E1E2F;">Modern</span> 
+              <span class="text-gradient">Enterprise</span><br />
+              <span style="color: #1E1E2F;">Communication</span>
+            </h1>
+
+            <!-- Subtext -->
+            <p class="hero-subtext">
+              Navabharath Technologies IVR Solutions delivers intelligent cloud-based communication systems designed to automate call handling, enhance customer engagement, optimize routing, and streamline enterprise communication workflows with reliability, scalability, and real-time analytics.
+            </p>
+          </div>
+
+          <!-- Right Column Visual Globe & Floating Cards -->
+          <div class="right-visuals">
+            
+            <!-- Interactive Globe Container -->
+            <div class="globe-visual-container">
+              <!-- Globe dust orbit particles canvas -->
+              <canvas id="globe-dust-canvas" style="position: absolute; width: 620px; height: 620px; pointer-events: none; z-index: 3;"></canvas>
+
+              <!-- Neon ambient glows -->
+              <div class="globe-neon-glow-1" style="animation: float-slow 4.5s ease-in-out infinite;"></div>
+              <div class="globe-neon-glow-2" style="animation: floating 6s ease-in-out infinite 1s;"></div>
+
+              <!-- Globe Rotating Background Image -->
+              <div class="globe-image" style="animation: rotate-clockwise 60s linear infinite;"></div>
+
+              <!-- Inner/Outer Orbit Rings -->
+              <div class="globe-orbit-ring-inner" style="animation: rotate-clockwise 18s linear infinite;"></div>
+              <div class="globe-orbit-ring-outer" style="animation: rotate-counter-clockwise 22s linear infinite;"></div>
+
+              <!-- Rotating light conic streaks -->
+              <div class="globe-light-streak-1" style="animation: rotate-clockwise 28s linear infinite;"></div>
+              <div class="globe-light-streak-2" style="animation: rotate-counter-clockwise 40s linear infinite;"></div>
+
+              <!-- SVG Animated Networking Lines -->
+              <svg viewBox="0 0 620 620" width="620" height="620" style="position: absolute; pointer-events: none; z-index: 4; transition: opacity 0.5s ease;">
+                <defs>
+                  <filter id="svgGlow0" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow1" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow2" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow3" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow4" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow5" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow6" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                  <filter id="svgGlow7" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                </defs>
+                <g>
+                  <path d="M 90,180 C 180,80 440,80 530,200" fill="none" stroke="#6C4CF1" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 90,180 C 180,80 440,80 530,200" fill="none" stroke="#6C4CF1" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash0 3.2s linear infinite; filter: url(#svgGlow0);" />
+                  <circle r="2" fill="#6C4CF1" fill-opacity="0.9" style="animation: dot0 3.2s linear infinite; offset-path: path('M 90,180 C 180,80 440,80 530,200'); offset-distance: 0%; filter: url(#svgGlow0);" />
+                </g>
+                <g>
+                  <path d="M 100,380 C 180,480 440,480 520,360" fill="none" stroke="#35C9FF" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 100,380 C 180,480 440,480 520,360" fill="none" stroke="#35C9FF" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash1 4.0s linear infinite 0.6s; filter: url(#svgGlow1);" />
+                  <circle r="2" fill="#35C9FF" fill-opacity="0.9" style="animation: dot1 4.0s linear infinite 0.6s; offset-path: path('M 100,380 C 180,480 440,480 520,360'); offset-distance: 0%; filter: url(#svgGlow1);" />
+                </g>
+                <g>
+                  <path d="M 60,280 C 120,160 500,160 560,280" fill="none" stroke="#6C4CF1" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 60,280 C 120,160 500,160 560,280" fill="none" stroke="#6C4CF1" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash2 5.0s linear infinite 1.2s; filter: url(#svgGlow2);" />
+                  <circle r="2" fill="#6C4CF1" fill-opacity="0.9" style="animation: dot2 5.0s linear infinite 1.2s; offset-path: path('M 60,280 C 120,160 500,160 560,280'); offset-distance: 0%; filter: url(#svgGlow2);" />
+                </g>
+                <g>
+                  <path d="M 80,320 C 140,440 480,440 540,320" fill="none" stroke="#35C9FF" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 80,320 C 140,440 480,440 540,320" fill="none" stroke="#35C9FF" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash3 3.6s linear infinite 0.3s; filter: url(#svgGlow3);" />
+                  <circle r="2" fill="#35C9FF" fill-opacity="0.9" style="animation: dot3 3.6s linear infinite 0.3s; offset-path: path('M 80,320 C 140,440 480,440 540,320'); offset-distance: 0%; filter: url(#svgGlow3);" />
+                </g>
+                <g>
+                  <path d="M 200,80 C 240,30 380,30 420,80" fill="none" stroke="#7C3AED" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 200,80 C 240,30 380,30 420,80" fill="none" stroke="#7C3AED" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash4 4.4s linear infinite 0.9s; filter: url(#svgGlow4);" />
+                  <circle r="2" fill="#7C3AED" fill-opacity="0.9" style="animation: dot4 4.4s linear infinite 0.9s; offset-path: path('M 200,80 C 240,30 380,30 420,80'); offset-distance: 0%; filter: url(#svgGlow4);" />
+                </g>
+                <g>
+                  <path d="M 200,540 C 240,590 380,590 420,540" fill="none" stroke="#7C3AED" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 200,540 C 240,590 380,590 420,540" fill="none" stroke="#7C3AED" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash5 4.8s linear infinite 1.5s; filter: url(#svgGlow5);" />
+                  <circle r="2" fill="#7C3AED" fill-opacity="0.9" style="animation: dot5 4.8s linear infinite 1.5s; offset-path: path('M 200,540 C 240,590 380,590 420,540'); offset-distance: 0%; filter: url(#svgGlow5);" />
+                </g>
+                <g>
+                  <path d="M 130,140 C 220,60 400,60 490,140" fill="none" stroke="#35C9FF" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 130,140 C 220,60 400,60 490,140" fill="none" stroke="#35C9FF" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash6 3.8s linear infinite 0.5s; filter: url(#svgGlow6);" />
+                  <circle r="2" fill="#35C9FF" fill-opacity="0.9" style="animation: dot6 3.8s linear infinite 0.5s; offset-path: path('M 130,140 C 220,60 400,60 490,140'); offset-distance: 0%; filter: url(#svgGlow6);" />
+                </g>
+                <g>
+                  <path d="M 130,480 C 220,560 400,560 490,480" fill="none" stroke="#6C4CF1" stroke-width="0.6" stroke-opacity="0.25" />
+                  <path d="M 130,480 C 220,560 400,560 490,480" fill="none" stroke="#6C4CF1" stroke-width="1.4" stroke-opacity="0.7" class="dash-path" style="animation: dash7 4.2s linear infinite 1.1s; filter: url(#svgGlow7);" />
+                  <circle r="2" fill="#6C4CF1" fill-opacity="0.9" style="animation: dot7 4.2s linear infinite 1.1s; offset-path: path('M 130,480 C 220,560 400,560 490,480'); offset-distance: 0%; filter: url(#svgGlow7);" />
+                </g>
+              </svg>
+            </div>
+
+            <!-- Glowing Floating Icons -->
+            <div class="glowing-icon float-icon-0" style="left: 0px; top: 15%; background: rgba(255,123,114,0.1); color: #FF7B72; box-shadow: 0 8px 32px rgba(31,38,135,0.05), 0 0 25px rgba(255,123,114,0.35);">
+              <i data-lucide="phone"></i>
+            </div>
+            <div class="glowing-icon float-icon-1" style="left: -15px; bottom: 25%; background: rgba(53,201,255,0.1); color: #35C9FF; box-shadow: 0 8px 32px rgba(31,38,135,0.05), 0 0 25px rgba(53,201,255,0.35);">
+              <i data-lucide="volume-2"></i>
+            </div>
+            <div class="glowing-icon float-icon-2" style="right: 0px; top: 30%; background: rgba(255,123,114,0.1); color: #FF7B72; box-shadow: 0 8px 32px rgba(31,38,135,0.05), 0 0 25px rgba(255,123,114,0.35);">
+              <i data-lucide="users"></i>
+            </div>
+            <div class="glowing-icon float-icon-3" style="right: 10px; bottom: 15%; background: rgba(53,201,255,0.1); color: #35C9FF; box-shadow: 0 8px 32px rgba(31,38,135,0.05), 0 0 25px rgba(53,201,255,0.35);">
+              <i data-lucide="cloud"></i>
+            </div>
+
+            <!-- Floating Feature Cards -->
+            <div class="floating-card float-card-0" style="right: 12%; top: 8%; border-color: rgba(108,76,241,0.25);" data-hover-color="#6C4CF1">
+              <div class="card-shimmer" style="background: linear-gradient(135deg, rgba(108,76,241,0.1) 0%, transparent 55%, rgba(108,76,241,0.04) 100%);"></div>
+              <div class="card-icon-box" style="background: rgba(108,76,241,0.08); color: #6C4CF1;"><i data-lucide="network"></i></div>
+              <div class="card-text">
+                <span class="card-title">AI Call Routing</span>
+                <span class="card-subtitle">Intelligent Logic</span>
+              </div>
+            </div>
+            <div class="floating-card float-card-1" style="left: 3%; top: 28%; border-color: rgba(255,123,114,0.25);" data-hover-color="#FF7B72">
+              <div class="card-shimmer" style="background: linear-gradient(135deg, rgba(255,123,114,0.1) 0%, transparent 55%, rgba(255,123,114,0.04) 100%);"></div>
+              <div class="card-icon-box" style="background: rgba(255,123,114,0.08); color: #FF7B72;"><i data-lucide="bar-chart-3"></i></div>
+              <div class="card-text">
+                <span class="card-title">Smart Analytics</span>
+                <span class="card-subtitle">Real-time Data</span>
+              </div>
+            </div>
+            <div class="floating-card float-card-2" style="right: 1%; top: 48%; border-color: rgba(0,194,160,0.25);" data-hover-color="#00C2A0">
+              <div class="card-shimmer" style="background: linear-gradient(135deg, rgba(0,194,160,0.1) 0%, transparent 55%, rgba(0,194,160,0.04) 100%);"></div>
+              <div class="card-icon-box" style="background: rgba(0,194,160,0.08); color: #00C2A0;"><i data-lucide="layers"></i></div>
+              <div class="card-text">
+                <span class="card-title">Multi-Level IVR</span>
+                <span class="card-subtitle">Dynamic Flows</span>
+              </div>
+            </div>
+            <div class="floating-card float-card-3" style="left: 10%; bottom: 14%; border-color: rgba(53,201,255,0.25);" data-hover-color="#35C9FF">
+              <div class="card-shimmer" style="background: linear-gradient(135deg, rgba(53,201,255,0.1) 0%, transparent 55%, rgba(53,201,255,0.04) 100%);"></div>
+              <div class="card-icon-box" style="background: rgba(53,201,255,0.08); color: #35C9FF;"><i data-lucide="zap"></i></div>
+              <div class="card-text">
+                <span class="card-title">24/7 IVR Automation</span>
+                <span class="card-subtitle">Always Online</span>
+              </div>
+            </div>
+            <div class="floating-card float-card-4" style="right: 14%; bottom: 8%; border-color: rgba(95,60,248,0.25);" data-hover-color="#5F3CF8">
+              <div class="card-shimmer" style="background: linear-gradient(135deg, rgba(95,60,248,0.1) 0%, transparent 55%, rgba(95,60,248,0.04) 100%);"></div>
+              <div class="card-icon-box" style="background: rgba(95,60,248,0.08); color: #5F3CF8;"><i data-lucide="phone-call"></i></div>
+              <div class="card-text">
+                <span class="card-title">Cloud Telephony</span>
+                <span class="card-subtitle">Global Reach</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+         ABOUT SECTION
+         ═══════════════════════════════════════════════════════════ -->
+      <section id="about" class="about-section">
+        <!-- Background blobs -->
+        <div class="about-blob-1" style="animation: blobDrift 10s ease-in-out infinite;"></div>
+        <div class="about-blob-2" style="animation: blobDrift2 13s ease-in-out infinite;"></div>
+
+        <!-- Floating Particles -->
+        <div class="about-particle" style="left: 5%; top: 20%; width: 4px; height: 4px; background: rgba(108,76,241,0.4); animation: floating 5s ease-in-out infinite 0s;"></div>
+        <div class="about-particle" style="left: 15%; top: 60%; width: 3px; height: 3px; background: rgba(53,201,255,0.4); animation: floating 6s ease-in-out infinite 1.2s;"></div>
+        <div class="about-particle" style="left: 25%; top: 80%; width: 5px; height: 5px; background: rgba(168,85,247,0.4); animation: floating 4.5s ease-in-out infinite 2s;"></div>
+        <div class="about-particle" style="left: 80%; top: 15%; width: 3px; height: 3px; background: rgba(108,76,241,0.3); animation: floating 5.5s ease-in-out infinite 0.5s;"></div>
+        <div class="about-particle" style="left: 90%; top: 55%; width: 4px; height: 4px; background: rgba(53,201,255,0.4); animation: floating 6.5s ease-in-out infinite 1.5s;"></div>
+        <div class="about-particle" style="left: 70%; top: 75%; width: 6px; height: 6px; background: rgba(168,85,247,0.3); animation: floating 5s ease-in-out infinite 2.5s;"></div>
+
+        <div class="container section-padding" style="position: relative; z-index: 1;">
+          <div style="display: flex; flex-direction: column; gap: 3.5rem;">
+            
+            <!-- Company Intro Heading -->
+            <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+              <span class="about-badge">About Company</span>
+              <h2 class="about-heading">
+                Transforming Enterprise Communication with <span class="text-gradient">Intelligent Solutions</span>
+              </h2>
+              <p class="about-p">
+                Navabharath Technologies delivers intelligent IVR and cloud communication solutions designed to simplify customer interactions, automate enterprise workflows, and enhance operational efficiency. Our mission is to help businesses build smarter, faster, and more connected customer experiences.
+              </p>
+            </div>
+
+            <!-- Cinematic Pillar Cards Grid -->
+            <div class="pillars-grid">
+              
+              <!-- Card 0: Mission -->
+              <div class="pillar-card">
+                <div class="mouse-light-tracker" data-accent-color="#35C9FF">
+                  <div class="mouse-light-glow"></div>
+                </div>
+                <div class="pillar-gradient-layer" style="background: linear-gradient(135deg, rgba(53,201,255,0.12) 0%, rgba(140,200,255,0.08) 100%);"></div>
+                <div class="pillar-shimmer-border"></div>
+                <div class="pillar-card-content">
+                  <div class="pillar-icon-area">
+                    <div class="pillar-orbit-ring" style="width: 80px; height: 80px; border: 1px solid rgba(53,201,255,0.1);"><div class="pillar-orbit-dot" style="background: #35C9FF; box-shadow: 0 0 6px #35C9FF;"></div></div>
+                    <div class="pillar-orbit-ring" style="width: 100px; height: 100px; border: 1px solid rgba(53,201,255,0.1);"><div class="pillar-orbit-dot" style="background: #35C9FF; box-shadow: 0 0 6px #35C9FF;"></div></div>
+                    <div class="pillar-icon-box" style="background: linear-gradient(135deg, rgba(53,201,255,0.25), rgba(53,201,255,0.08)); border: 1px solid rgba(53,201,255,0.35); color: #35C9FF;">
+                      <i data-lucide="target" style="width: 24px; height: 24px;"></i>
+                    </div>
+                  </div>
+                  <div class="pillar-tag-row">
+                    <div class="pillar-pulse-dot-container"><div class="pillar-pulse-dot-ring pulse-dot-ring-active" style="background: #35C9FF;"></div><div class="pillar-pulse-dot-center" style="background: #35C9FF;"></div></div>
+                    <span class="pillar-tag-text" style="background: rgba(53,201,255,0.15); color: #35C9FF;">Customer-Driven</span>
+                  </div>
+                  <h4 class="pillar-title">Mission</h4>
+                  <p class="pillar-text">Delivering reliable, automated, and customer-focused communication solutions that improve engagement and operational efficiency.</p>
+                </div>
+              </div>
+
+              <!-- Card 1: Vision -->
+              <div class="pillar-card">
+                <div class="mouse-light-tracker" data-accent-color="#6C4CF1">
+                  <div class="mouse-light-glow"></div>
+                </div>
+                <div class="pillar-gradient-layer" style="background: linear-gradient(135deg, rgba(108,76,241,0.15) 0%, rgba(180,140,255,0.08) 100%);"></div>
+                <div class="pillar-shimmer-border"></div>
+                <div class="pillar-card-content">
+                  <div class="pillar-icon-area">
+                    <div class="pillar-orbit-ring" style="width: 80px; height: 80px; border: 1px solid rgba(108,76,241,0.1);"><div class="pillar-orbit-dot" style="background: #6C4CF1; box-shadow: 0 0 6px #6C4CF1;"></div></div>
+                    <div class="pillar-orbit-ring" style="width: 100px; height: 100px; border: 1px solid rgba(108,76,241,0.1);"><div class="pillar-orbit-dot" style="background: #6C4CF1; box-shadow: 0 0 6px #6C4CF1;"></div></div>
+                    <div class="pillar-icon-box" style="background: linear-gradient(135deg, rgba(108,76,241,0.25), rgba(108,76,241,0.08)); border: 1px solid rgba(108,76,241,0.35); color: #6C4CF1;">
+                      <i data-lucide="eye" style="width: 24px; height: 24px;"></i>
+                    </div>
+                  </div>
+                  <div class="pillar-tag-row">
+                    <div class="pillar-pulse-dot-container"><div class="pillar-pulse-dot-ring pulse-dot-ring-active" style="background: #6C4CF1;"></div><div class="pillar-pulse-dot-center" style="background: #6C4CF1;"></div></div>
+                    <span class="pillar-tag-text" style="background: rgba(108,76,241,0.15); color: #6C4CF1;">Future-Focused</span>
+                  </div>
+                  <h4 class="pillar-title">Vision</h4>
+                  <p class="pillar-text">Building intelligent communication ecosystems for modern enterprises through scalable and AI-driven IVR technologies.</p>
+                </div>
+              </div>
+
+              <!-- Card 2: Innovation -->
+              <div class="pillar-card">
+                <div class="mouse-light-tracker" data-accent-color="#EC4899">
+                  <div class="mouse-light-glow"></div>
+                </div>
+                <div class="pillar-gradient-layer" style="background: linear-gradient(135deg, rgba(236,72,153,0.12) 0%, rgba(255,180,220,0.08) 100%);"></div>
+                <div class="pillar-shimmer-border"></div>
+                <div class="pillar-card-content">
+                  <div class="pillar-icon-area">
+                    <div class="pillar-orbit-ring" style="width: 80px; height: 80px; border: 1px solid rgba(236,72,153,0.1);"><div class="pillar-orbit-dot" style="background: #EC4899; box-shadow: 0 0 6px #EC4899;"></div></div>
+                    <div class="pillar-orbit-ring" style="width: 100px; height: 100px; border: 1px solid rgba(236,72,153,0.1);"><div class="pillar-orbit-dot" style="background: #EC4899; box-shadow: 0 0 6px #EC4899;"></div></div>
+                    <div class="pillar-icon-box" style="background: linear-gradient(135deg, rgba(236,72,153,0.25), rgba(236,72,153,0.08)); border: 1px solid rgba(236,72,153,0.35); color: #EC4899;">
+                      <i data-lucide="zap" style="width: 24px; height: 24px;"></i>
+                    </div>
+                  </div>
+                  <div class="pillar-tag-row">
+                    <div class="pillar-pulse-dot-container"><div class="pillar-pulse-dot-ring pulse-dot-ring-active" style="background: #EC4899;"></div><div class="pillar-pulse-dot-center" style="background: #EC4899;"></div></div>
+                    <span class="pillar-tag-text" style="background: rgba(236,72,153,0.15); color: #EC4899;">AI-Powered</span>
+                  </div>
+                  <h4 class="pillar-title">Innovation</h4>
+                  <p class="pillar-text">Combining cloud telephony, AI automation, analytics, and enterprise communication into one unified platform.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+         FEATURES SECTION
+         ═══════════════════════════════════════════════════════════ -->
+      <section id="features" class="features-section">
+        <!-- Ambient background glows -->
+        <div class="features-blob-1"></div>
+        <div class="features-blob-2"></div>
+
+        <div style="position: relative; z-index: 1;">
+          
+          <!-- Header Block -->
+          <div style="text-align: center; max-width: 850px; margin: 0 auto 5rem; padding: 0 1.5rem;">
+            <span class="features-badge">Core Capabilities</span>
+            <h2 class="features-heading">
+              Enterprise-Grade IVR Features Designed for <span class="text-gradient">Intelligent Communication</span>
+            </h2>
+            <p class="features-p">
+              Empower your contact center with cutting-edge AI capability, carrier-grade infrastructure, and sub-second intelligent routing designed to deliver unparalleled customer experiences.
+            </p>
+          </div>
+
+          <!-- Carousel Viewport -->
+          <div class="carousel-viewport">
+            <!-- Draggable animated track -->
+            <div class="carousel-track">
+
+              <!-- Card 01: AI-Powered IVR -->
+              <div class="feature-card active" id="feature-step-0">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(79,70,229,0.07) 0%, rgba(129,140,248,0.04) 50%, rgba(79,70,229,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #4F46E5 0%, #818CF8 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, #4F46E5 0%, #818CF8 100%); color: white;">
+                      <i data-lucide="cpu" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">01</span>
+                </div>
+                <div class="feature-tagline" style="color: #4F46E5;">Intelligent Voice Automation</div>
+                <h4 class="feature-title">AI-Powered IVR</h4>
+                <p class="feature-desc">Natural language processing and machine learning deliver human-like call experiences that self-improve with every interaction.</p>
+              </div>
+
+              <!-- Card 02: Cloud Infrastructure -->
+              <div class="feature-card" id="feature-step-1">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(14,165,233,0.07) 0%, rgba(56,189,248,0.04) 50%, rgba(14,165,233,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(14,165,233,0.14) 0%, rgba(14,165,233,0.03) 100%); color: #0EA5E9;">
+                      <i data-lucide="cloud" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">02</span>
+                </div>
+                <div class="feature-tagline" style="color: #0EA5E9;">Elastic, Always-On Platform</div>
+                <h4 class="feature-title">Cloud Infrastructure</h4>
+                <p class="feature-desc">Enterprise-grade cloud telephony with auto-scaling architecture ensures zero downtime under peak traffic loads.</p>
+              </div>
+
+              <!-- Card 03: Real-Time Analytics -->
+              <div class="feature-card" id="feature-step-2">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(139,92,246,0.07) 0%, rgba(192,132,252,0.04) 50%, rgba(139,92,246,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #8B5CF6 0%, #C084FC 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(139,92,246,0.14) 0%, rgba(139,92,246,0.03) 100%); color: #8B5CF6;">
+                      <i data-lucide="bar-chart-3" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">03</span>
+                </div>
+                <div class="feature-tagline" style="color: #8B5CF6;">Insights at the Speed of Calls</div>
+                <h4 class="feature-title">Real-Time Analytics</h4>
+                <p class="feature-desc">Live dashboards and actionable intelligence on call flows, agent performance, and customer journey patterns.</p>
+              </div>
+
+              <!-- Card 04: Smart Call Routing -->
+              <div class="feature-card" id="feature-step-3">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(13,148,136,0.07) 0%, rgba(45,212,191,0.04) 50%, rgba(13,148,136,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(13,148,136,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #0D9488 0%, #2DD4BF 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(13,148,136,0.14) 0%, rgba(13,148,136,0.03) 100%); color: #0D9488;">
+                      <i data-lucide="shuffle" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">04</span>
+                </div>
+                <div class="feature-tagline" style="color: #0D9488;">Right Agent, Right Moment</div>
+                <h4 class="feature-title">Smart Call Routing</h4>
+                <p class="feature-desc">AI-driven routing uses caller history, skills, and queue data to connect customers to the optimal resource instantly.</p>
+              </div>
+
+              <!-- Card 05: Enterprise Security -->
+              <div class="feature-card" id="feature-step-4">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(16,185,129,0.07) 0%, rgba(52,211,153,0.04) 50%, rgba(16,185,129,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #10B981 0%, #34D399 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(16,185,129,0.14) 0%, rgba(16,185,129,0.03) 100%); color: #10B981;">
+                      <i data-lucide="shield-check" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">05</span>
+                </div>
+                <div class="feature-tagline" style="color: #10B981;">Zero-Trust Call Protection</div>
+                <h4 class="feature-title">Enterprise Security</h4>
+                <p class="feature-desc">End-to-end AES-256 encryption, GDPR & HIPAA compliance, and real-time fraud detection safeguard every call.</p>
+              </div>
+
+              <!-- Card 06: Scalable Architecture -->
+              <div class="feature-card" id="feature-step-5">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(236,72,153,0.07) 0%, rgba(244,114,182,0.04) 50%, rgba(236,72,153,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(236,72,153,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(236,72,153,0.14) 0%, rgba(236,72,153,0.03) 100%); color: #EC4899;">
+                      <i data-lucide="layers" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">06</span>
+                </div>
+                <div class="feature-tagline" style="color: #EC4899;">Built for Enterprise Volume</div>
+                <h4 class="feature-title">Scalable Architecture</h4>
+                <p class="feature-desc">Handle millions of concurrent calls with modular microservices that scale horizontally in under 30 seconds.</p>
+              </div>
+
+              <!-- Card 07: 24/7 Reliability -->
+              <div class="feature-card" id="feature-step-6">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(245,158,11,0.07) 0%, rgba(251,191,36,0.04) 50%, rgba(245,158,11,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(245,158,11,0.14) 0%, rgba(245,158,11,0.03) 100%); color: #F59E0B;">
+                      <i data-lucide="clock" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">07</span>
+                </div>
+                <div class="feature-tagline" style="color: #F59E0B;">Never Misses a Call</div>
+                <h4 class="feature-title">24/7 Reliability</h4>
+                <p class="feature-desc">Proactive system monitoring and automated health checks guarantee continuous system availability.</p>
+              </div>
+
+              <!-- Card 08: Seamless Integrations -->
+              <div class="feature-card" id="feature-step-7">
+                <div class="feature-shimmer-border"></div>
+                <div class="feature-bg-glow" style="background: linear-gradient(135deg, rgba(59,130,246,0.07) 0%, rgba(96,165,250,0.04) 50%, rgba(59,130,246,0.02) 100%);"></div>
+                <div class="feature-graphics">
+                  <div class="feature-blob" style="background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);"></div>
+                  <div class="reflection-streak"></div>
+                </div>
+                <div class="feature-card-header">
+                  <div class="feature-icon-container">
+                    <div class="feature-icon-glow" style="background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);"></div>
+                    <div class="feature-icon-box" style="background: linear-gradient(135deg, rgba(59,130,246,0.14) 0%, rgba(59,130,246,0.03) 100%); color: #3B82F6;">
+                      <i data-lucide="link-2" style="width: 26px; height: 26px;"></i>
+                    </div>
+                  </div>
+                  <span class="feature-num">08</span>
+                </div>
+                <div class="feature-tagline" style="color: #3B82F6;">Connect Your Entire Stack</div>
+                <h4 class="feature-title">Seamless Integrations</h4>
+                <p class="feature-desc">Native CRM, helpdesk, and ERP connectors plus REST APIs allow instant data sync across your ecosystem.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+         INDUSTRIES SECTION
+         ═══════════════════════════════════════════════════════════ -->
+      <section id="industries" class="industries-section section-padding">
+        <!-- Ambient background blobs -->
+        <div class="industries-blob-1" style="animation: blobPulse1 12s ease-in-out infinite;"></div>
+        <div class="industries-blob-2" style="animation: blobPulse2 15s ease-in-out infinite;"></div>
+        <div class="industries-blob-3"></div>
+
+        <!-- Floating Particles -->
+        <div class="about-particle" style="left: 3%; top: 15%; width: 5px; height: 5px; background: rgba(108,76,241,0.45); animation: floating 5s ease-in-out infinite 0s;"></div>
+        <div class="about-particle" style="left: 8%; top: 65%; width: 4px; height: 4px; background: rgba(53,201,255,0.4); animation: floating 6s ease-in-out infinite 1.2s;"></div>
+        <div class="about-particle" style="left: 92%; top: 20%; width: 6px; height: 6px; background: rgba(168,85,247,0.45); animation: floating 4.5s ease-in-out infinite 0.6s;"></div>
+        <div class="about-particle" style="left: 96%; top: 70%; width: 3px; height: 3px; background: rgba(53,201,255,0.35); animation: floating 7s ease-in-out infinite 2s;"></div>
+        <div class="about-particle" style="left: 50%; top: 5%; width: 4px; height: 4px; background: rgba(236,72,153,0.35); animation: floating 5.5s ease-in-out infinite 1.5s;"></div>
+        <div class="about-particle" style="left: 20%; top: 88%; width: 3px; height: 3px; background: rgba(108,76,241,0.3); animation: floating 6.5s ease-in-out infinite 0.8s;"></div>
+        <div class="about-particle" style="left: 75%; top: 90%; width: 5px; height: 5px; background: rgba(16,185,129,0.35); animation: floating 5s ease-in-out infinite 2.2s;"></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+          
+          <!-- Section Heading -->
+          <div style="text-align: center; margin-bottom: 5rem;">
+            <span class="industries-badge">Global Reach</span>
+            <h2 class="industries-heading">
+              Industries We <span class="text-gradient" style="animation: gradientShift 6s ease infinite; background-size: 200% 200%;">Elevate</span>
+            </h2>
+            <p class="industries-p">
+              Empowering industries with intelligent IVR automation, cloud communication, AI-driven routing, and scalable enterprise engagement solutions.
+            </p>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="industries-grid">
+
+            <!-- Card 1: Banking -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(53,201,255,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #35C9FF 0%, #6C4CF1 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(53,201,255,0.15), rgba(53,201,255,0.06)); color: #35C9FF;">
+                    <i data-lucide="landmark" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(53,201,255,0.1); color: #35C9FF;">
+                  <span class="industry-tag-dot" style="background: #35C9FF;"></span>
+                  Secure & Compliant
+                </div>
+                <h4 class="industry-title">Banking & Finance</h4>
+                <p class="industry-desc">Secure, AI-driven IVR for account inquiries, fraud alerts, and smart call routing.</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Education -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(168,85,247,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #A855F7 0%, #35C9FF 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(168,85,247,0.06)); color: #A855F7;">
+                    <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(168,85,247,0.1); color: #A855F7;">
+                  <span class="industry-tag-dot" style="background: #A855F7;"></span>
+                  Always Available
+                </div>
+                <h4 class="industry-title">Education</h4>
+                <p class="industry-desc">Admission helplines, result announcements, and automated student engagement.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: E-Commerce -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(236,72,153,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #EC4899 0%, #A855F7 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(236,72,153,0.06)); color: #EC4899;">
+                    <i data-lucide="shopping-bag" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(236,72,153,0.1); color: #EC4899;">
+                  <span class="industry-tag-dot" style="background: #EC4899;"></span>
+                  High-Volume Ready
+                </div>
+                <h4 class="industry-title">E-Commerce</h4>
+                <p class="industry-desc">Order tracking, return management, and real-time customer support at scale.</p>
+              </div>
+            </div>
+
+            <!-- Card 4: Telecom -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(6,182,212,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #06B6D4 0%, #6C4CF1 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(6,182,212,0.15), rgba(6,182,212,0.06)); color: #06B6D4;">
+                    <i data-lucide="wifi" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(6,182,212,0.1); color: #06B6D4;">
+                  <span class="industry-tag-dot" style="background: #06B6D4;"></span>
+                  Always Connected
+                </div>
+                <h4 class="industry-title">Telecom</h4>
+                <p class="industry-desc">Network issue triage, plan upgrades, and intelligent tier-based call flows.</p>
+              </div>
+            </div>
+
+            <!-- Card 5: Customer Support -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(245,158,11,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.06)); color: #F59E0B;">
+                    <i data-lucide="headphones" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(245,158,11,0.1); color: #F59E0B;">
+                  <span class="industry-tag-dot" style="background: #F59E0B;"></span>
+                  CRM-Integrated
+                </div>
+                <h4 class="industry-title">Customer Support</h4>
+                <p class="industry-desc">Omnichannel IVR, CRM integration, and intelligent agent handoff for enterprise teams.</p>
+              </div>
+            </div>
+
+            <!-- Card 6: Logistics -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(16,185,129,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #10B981 0%, #35C9FF 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.06)); color: #10B981;">
+                    <i data-lucide="truck" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(16,185,129,0.1); color: #10B981;">
+                  <span class="industry-tag-dot" style="background: #10B981;"></span>
+                  Real-Time Alerts
+                </div>
+                <h4 class="industry-title">Logistics</h4>
+                <p class="industry-desc">Delivery status, route tracking, and proactive customer notifications via voice.</p>
+              </div>
+            </div>
+
+            <!-- Card 7: Hospitality -->
+            <div class="industry-card">
+              <div class="industry-radial-overlay" style="background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.06) 0%, transparent 60%);"></div>
+              <div class="industry-top-streak" style="background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);"></div>
+              <div class="industry-card-inner">
+                <div class="industry-icon-container">
+                  <div class="industry-icon-box" style="background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(139,92,246,0.06)); color: #8B5CF6;">
+                    <i data-lucide="hotel" style="width: 24px; height: 24px;"></i>
+                  </div>
+                </div>
+                <div class="industry-tag" style="background: rgba(139,92,246,0.1); color: #8B5CF6;">
+                  <span class="industry-tag-dot" style="background: #8B5CF6;"></span>
+                  Guest-Centric
+                </div>
+                <h4 class="industry-title">Hospitality</h4>
+                <p class="industry-desc">Reservation management, concierge automation, and guest experience enhancement.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+         FAQ SECTION
+         ═══════════════════════════════════════════════════════════ -->
+      <section id="faq" class="faq-section section-padding">
+        <div class="container">
+          
+          <!-- Heading Block -->
+          <div style="text-align: center; margin-bottom: 4rem;">
+            <span class="faq-badge">Support</span>
+            <h2 class="faq-heading">
+              Frequently Asked <span class="text-gradient">Questions</span>
+            </h2>
+            <p class="faq-subheading">
+              Everything you need to know about the product and billing.
+            </p>
+          </div>
+
+          <!-- FAQ Items Grid Accordion -->
+          <div class="faq-grid">
+
+            <!-- Question 1 -->
+            <div class="faq-item">
+              <button class="faq-header">
+                <span class="faq-question">1. How does Navabharath Technologies IVR help businesses?</span>
+                <div class="faq-chevron"><i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i></div>
+              </button>
+              <div class="faq-collapse-wrapper">
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    Our IVR solutions automate customer interactions, reduce manual workload, improve call routing, enhance customer experience, and provide real-time analytics for better communication management.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <button class="faq-header">
+                <span class="faq-question">2. Can the IVR system be customized for different businesses?</span>
+                <div class="faq-chevron"><i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i></div>
+              </button>
+              <div class="faq-collapse-wrapper">
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    Yes. Our IVR solutions are fully customizable based on your business workflows, departments, languages, call routing requirements, and customer engagement processes.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <button class="faq-header">
+                <span class="faq-question">3. Does your IVR solution support cloud telephony?</span>
+                <div class="faq-chevron"><i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i></div>
+              </button>
+              <div class="faq-collapse-wrapper">
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    Yes. We provide cloud-based IVR and telephony solutions that enable scalable, secure, and reliable communication from anywhere with centralized management.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <button class="faq-header">
+                <span class="faq-question">4. Can the IVR integrate with CRM software?</span>
+                <div class="faq-chevron"><i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i></div>
+              </button>
+              <div class="faq-collapse-wrapper">
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    Absolutely. Our platform supports seamless integration with CRM systems, customer databases, ticketing platforms, and enterprise applications for improved workflow automation.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <button class="faq-header">
+                <span class="faq-question">5. Does the system support multi-level call routing?</span>
+                <div class="faq-chevron"><i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i></div>
+              </button>
+              <div class="faq-collapse-wrapper">
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    Yes. Our IVR supports intelligent multi-level call routing to connect customers to the right department or agent efficiently.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="faq-item">
+              <button class="faq-header">
+                <span class="faq-question">6. How quickly can the IVR solution be deployed?</span>
+                <div class="faq-chevron"><i data-lucide="chevron-down" style="width: 24px; height: 24px;"></i></div>
+              </button>
+              <div class="faq-collapse-wrapper">
+                <div class="faq-content">
+                  <div class="faq-content-inner">
+                    Deployment timelines depend on project requirements, but our scalable architecture allows rapid implementation and seamless integration.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════
+         CONTACT SECTION
+         ═══════════════════════════════════════════════════════════ -->
+      <section id="contact" class="contact-section">
+        <!-- Ambient background glow -->
+        <div class="contact-blob-1"></div>
+
+        <div class="container section-padding" style="position: relative; z-index: 1;">
+          
+          <!-- Heading -->
+          <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem;">
+            <span class="contact-badge">Connect With Us</span>
+            <h2 class="contact-heading">
+              Let's Build Something <span class="text-gradient">Great Together</span>
+            </h2>
+          </div>
+
+          <!-- Single Contact Info Card -->
+          <div class="contact-info-single-card">
+            <div class="contact-info-title">Contact Information</div>
+            
+            <div class="contact-info-list">
+              
+              <!-- Email -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon-box">
+                  <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+                </div>
+                <div>
+                  <div class="contact-info-label">Email</div>
+                  <div class="contact-info-value">contact@navabharathtechnologies.com</div>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="contact-info-item">
+                <div class="contact-info-icon-box">
+                  <i data-lucide="clock" style="width: 20px; height: 20px;"></i>
+                </div>
+                <div>
+                  <div class="contact-info-label">Business Hours</div>
+                  <div class="contact-info-value">Mon - Sat, 9:30 AM - 6:00 PM IST</div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="contact-info-item align-top">
+                <div class="contact-info-icon-box">
+                  <i data-lucide="map-pin" style="width: 20px; height: 20px;"></i>
+                </div>
+                <div>
+                  <div class="contact-info-label">Headquarters</div>
+                  <div class="contact-info-value">
+                    #667/B 2nd Floor, Chitrabhanu Road<br />
+                    Kuvempu Nagar, Mysore,<br />
+                    Karnataka - 570023
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════
+       FOOTER COMPONENT
+       ═══════════════════════════════════════════════════════════ -->
+    <footer class="footer-section">
+      <div class="container">
+        
+        <div class="footer-grid">
+          
+          <!-- Brand Column -->
+          <div class="footer-brand-col">
+            <div class="footer-logo-row">
+              <img src="images/navabharath_logo.png" alt="Navabharath Technologies" class="footer-logo-img" />
+              <div>
+                <div class="footer-logo-title">NAVABHARATH</div>
+                <div class="footer-logo-subtitle">TECHNOLOGIES</div>
+              </div>
+            </div>
+            <p class="footer-desc">
+              Pioneering the future of communication with AI-integrated IVR and cloud-based telephony architectures.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links-list">
+              <li><a href="#home" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Home</a></li>
+              <li><a href="#about" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> About Us</a></li>
+              <li><a href="#features" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Features</a></li>
+              <li><a href="#contact" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Features Column -->
+          <div>
+            <h4 class="footer-col-title">Features</h4>
+            <ul class="footer-links-list">
+              <li><a href="#feature-step-0" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> AI-Powered IVR</a></li>
+              <li><a href="#feature-step-1" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Cloud Infrastructure</a></li>
+              <li><a href="#feature-step-2" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Real-Time Analytics</a></li>
+              <li><a href="#feature-step-3" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Smart Call Routing</a></li>
+              <li><a href="#feature-step-4" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Enterprise Security</a></li>
+              <li><a href="#feature-step-5" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Scalable Architecture</a></li>
+              <li><a href="#feature-step-6" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> 24/7 Reliability</a></li>
+              <li><a href="#feature-step-7" class="footer-link"><i data-lucide="chevron-right" style="width: 14px; height: 14px;"></i> Seamless Integrations</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Copyright Row -->
+        <div class="footer-divider-row">
+          <div>&copy; <span id="footer-year">2026</span> Navabharath Technologies. All Rights Reserved.</div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Lucide Icon UMD CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+    
+    // Set dynamic current year in footer
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Core Javascript files -->
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+
+</body>
 </html>
