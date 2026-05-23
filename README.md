@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Navabharth Technologies - IVR Solutions Webpage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, highly interactive, and responsive landing page for Navabharth Technologies' IVR Solutions, built entirely with **pure HTML5, CSS3, and Vanilla JavaScript**.
 
-Currently, two official plugins are available:
+This project has been fully migrated from a React + TypeScript + Vite architecture to a pure, zero-compilation static stack to maximize page performance, SEO indexability, and setup simplicity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **High-Performance Canvas Particle System**: Organic floating particle grid networks and swirling globe rings running on GPU-accelerated standard canvas loops (`requestAnimationFrame`).
+* **SVG Network Orbit Lines**: Dynamic dashed SVG orbit paths rendering glowing moving dots via CSS keyframe styling.
+* **Ambient Cursor Follow Glows**: Micro-interaction mouse hover glows using smooth interpolation coordinate transitions.
+* **Interactive Components**:
+  * **Draggable Feature Carousel**: Custom click/drag & touch slider built with pure JS (supports auto-scrolling with pause on hover).
+  * **Navigation Scrollspy**: Smooth, automatic active link updates matching page scroll position.
+  * **Auto-Height Accordion**: Smooth FAQ drawers powered by modern CSS grid transition layouts.
+  * **Click Ripples**: Real-time cursor ripple generation on dashboard previews and button clicks.
+* **Fully Responsive Design**: Tailored CSS flexbox and grid layouts optimized for mobile, tablet, and ultra-wide displays.
+* **Production Build Setup**: Synced static hosting assets stored in the `/docs` directory to serve seamlessly on GitHub Pages.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Directory Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+├── .github/workflows/   # CI/CD deployment pipelines to GitHub Pages
+├── css/
+│   ├── style.css        # Base design tokens, layout variables, and component styles
+│   └── animations.css   # Keyframe definitions, transitions, and hover effects
+├── js/
+│   ├── main.js          # Core application logic, carousel, ripples, scrollspy
+│   └── animations.js    # Canvas renders, spring cursor particles, hover light loops
+├── images/              # Optimised image assets, logos, and page backgrounds
+├── docs/                # Production-ready synced builds (used for GitHub Pages hosting)
+├── index.html           # Main semantic entry point
+├── README.md            # Documentation file
+└── .gitignore           # File exclusion configurations
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ How to Run Locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Since this project consists of pure static web assets, no compilers or dependencies (like Node.js, npm, or Vite) are required to build or execute the project.
+
+### Option 1: Live Server (Recommended)
+1. Open the project folder in VS Code.
+2. Install the **Live Server** extension.
+3. Click **Go Live** in the status bar to run the project locally with auto-reload capabilities.
+
+### Option 2: Direct Execution
+Simply double-click the `index.html` file in your system file explorer to open and run the landing page directly in your browser.
+
+---
+
+## 🌐 Deployment
+
+The site is automatically deployed to GitHub Pages via GitHub Actions upon any changes pushed to the `main` branch.
+* Deployment configuration: [.github/workflows/deploy.yml](file:///.github/workflows/deploy.yml)
+* Hosting Source: Synced `/docs` folder
