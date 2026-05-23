@@ -1,8 +1,6 @@
 # Navabharth Technologies - IVR Solutions Webpage
 
-A premium, highly interactive, and responsive landing page for Navabharth Technologies' IVR Solutions, built entirely with **pure HTML5, CSS3, and Vanilla JavaScript**.
-
-This project has been fully migrated from a React + TypeScript + Vite architecture to a pure, zero-compilation static stack to maximize page performance, SEO indexability, and setup simplicity.
+A premium, highly interactive, and responsive landing page for Navabharth Technologies' IVR Solutions, built entirely with **pure HTML5, CSS3, and JavaScript**.
 
 ---
 
